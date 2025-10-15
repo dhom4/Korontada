@@ -4,7 +4,8 @@
     --secondary-color: #ffc107; /* Bright Yellow/Gold for CTAs and Safety */
     --dark-color: #212529;
     --light-bg: #f8f9fa;
-    --font-family: 'Montserrat', sans-serif;
+    --font-family-en: 'Montserrat', sans-serif;
+    --font-family-so: 'Noto Sans Arabic', sans-serif; /* For Somali/Arabic text */
 }
 
 * {
@@ -14,9 +15,10 @@
 }
 
 body {
-    font-family: var(--font-family);
+    font-family: var(--font-family-en), var(--font-family-so); /* Prioritize English font, fallback to Somali */
     line-height: 1.6;
     color: var(--dark-color);
+    direction: ltr; /* Ensure left-to-right for overall layout */
 }
 
 /* Header & Navigation */
@@ -53,13 +55,13 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background: var(--primary-color) url('electrician-bg.jpg') no-repeat center center/cover; /* Replace with a real image */
+    background: var(--primary-color) url('https://example.com/puntland-electrician-hero.jpg') no-repeat center center/cover; /* Placeholder for a relevant image */
     height: 80vh;
     display: flex;
     align-items: center;
     padding: 0 5%;
     color: white;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4); /* Dark overlay */
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5); /* Darker overlay for text readability */
 }
 
 .hero-content {
@@ -144,6 +146,49 @@ body {
     display: none;
 }
 
+/* About Section */
+.about-section {
+    padding: 4rem 5%;
+    background: white;
+    text-align: center;
+}
+
+.about-section h2 {
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
 /* Services Section */
 .services-section {
     padding: 4rem 5%;
@@ -169,11 +214,20 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    text-align: center;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
     border-bottom: 4px solid var(--secondary-color);
+}
+
+.service-card img {
+    max-width: 100%;
+    height: 150px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    border-radius: 5px;
+    margin-bottom: 15px;
 }
 
 .service-card h3 {
@@ -206,6 +260,7 @@ body {
 .usp-section li {
     max-width: 300px;
     padding: 15px;
+    text-align: left; /* Align points for readability */
 }
 
 /* Footer */
@@ -215,6 +270,25 @@ body {
     padding: 20px 5%;
     text-align: center;
     font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-footer p {
+    margin: 5px 0;
+}
+
+.social-links a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
 }
 
 /* Responsive adjustments */
@@ -234,6 +308,14 @@ body {
         width: 100%;
         max-width: 450px;
     }
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-text, .about-image {
+        flex: none;
+        width: 100%;
+    }
     .service-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -241,6 +323,10 @@ body {
         flex-direction: column;
         gap: 20px;
         align-items: center;
+    }
+    .main-footer {
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
@@ -254,5 +340,8 @@ body {
     }
     .hero-content h1 {
         font-size: 2.2rem;
+    }
+    .hero-content p {
+        font-size: 1.1rem;
     }
 }
