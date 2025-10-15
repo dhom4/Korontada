@@ -1,28 +1,45 @@
-// script.js
-const form = document.getElementById('serviceForm');
-const responseMsg = document.getElementById('responseMsg');
+document.addEventListener('DOMContentLoaded', () => {
+    const signupForm = document.getElementById('signup-form');
+    const formMessage = document.getElementById('form-message');
+    const ctaButton = document.getElementById('cta-button');
 
+    // Function to handle the form submission
+    signupForm.addEventListener('submit', function(event) {
+        event.preventDefault(); // Stop the form from submitting normally
 
-form.addEventListener('submit', (e) => {
-e.preventDefault();
+        // Get values from the form
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
 
+        // Simple validation
+        if (name.trim() === '' || email.trim() === '') {
+            formMessage.textContent = 'Please fill out both your name and email.';
+            formMessage.classList.remove('hidden');
+            return;
+        }
 
-const name = document.getElementById('name').value.trim();
-const email = document.getElementById('email').value.trim();
-const region = document.getElementById('region').value.trim();
-const message = document.getElementById('message').value.trim();
+        // --- Simulated Data Submission (In a real site, you'd send this to a server) ---
+        console.log(`New Volunteer Signed Up: Name: ${name}, Email: ${email}`);
 
+        // Display success message
+        formMessage.textContent = `Thank you, ${name}! You have joined the movement. Check your email for updates!`;
+        formMessage.classList.remove('hidden');
 
-if (!name || !email || !region || !message) {
-responseMsg.textContent = 'Please fill in all fields.';
-responseMsg.style.color = 'yellow';
-return;
-}
+        // Clear the form
+        signupForm.reset();
 
+        // Optional: Hide the message after a few seconds
+        setTimeout(() => {
+            formMessage.classList.add('hidden');
+            formMessage.textContent = '';
+        }, 5000);
+    });
 
-responseMsg.textContent = `Thank you, ${name}! Your service request has been received.`;
-responseMsg.style.color = '#00ff99';
-
-
-form.reset();
+    // Function to make the Hero CTA button scroll to the sign-up section
+    ctaButton.addEventListener('click', function() {
+        const signupSection = document.getElementById('contact');
+        if (signupSection) {
+            signupSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
 });
