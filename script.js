@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Simple validation
         if (name.trim() === '' || phone.trim() === '' || details.trim() === '') {
-            formMessage.textContent = 'Please fill out all fields.';
+            formMessage.textContent = 'Fadlan buuxi dhammaan meelaha banaan.'; // Please fill out all fields.
             formMessage.style.color = 'red';
             formMessage.classList.remove('hidden');
             return;
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         );
 
         // Display success message
-        formMessage.textContent = `Thank you, ${name}! We received your request and will call you back within 15 minutes!`;
+        formMessage.textContent = `Waad ku mahadsantahay, ${name}! Waxaan helnay codsigaaga, waana ku soo wacaynaa 15 daqiiqo gudahood!`; // Thank you, [name]! We received your request and will call you back within 15 minutes!
         formMessage.style.color = 'green';
         formMessage.classList.remove('hidden');
 
