@@ -3,68 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vote [Candidate Name] - For a Better Future</title>
-    <link rel="stylesheet" href="./style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>[Company Name] | Licensed & Insured Local Electricians</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header class="main-header">
-        <div class="logo">[Candidate Name]</div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#platform">Platform</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <button class="donate-btn">Donate Now</button>
+        <div class="logo">⚡️ **[Company Name]**</div>
+        <a href="tel:555-123-4567" class="phone-btn">Call Now: (555) 123-4567</a>
     </header>
 
     <section class="hero-section">
         <div class="hero-content">
-            <h1>Vote for Change. Vote for **[Candidate Name]**</h1>
-            <p>Committed to creating a thriving community, focused on education, jobs, and healthcare.</p>
-            <button id="cta-button" class="cta-primary">Join Our Movement</button>
+            <h1>Expert Electrician Services for Your Home & Business</h1>
+            <p>24/7 Emergency Service. Upfront Pricing. Licensed & Insured Professionals.</p>
+            <div class="rating-badge">⭐️⭐️⭐️⭐️⭐️ 5-Star Rated in Your Area</div>
+        </div>
+        
+        <div class="contact-form-container">
+            <h2>Get a Free Quote!</h2>
+            <form id="quote-form" class="quote-form">
+                <input type="text" id="form-name" placeholder="Your Name" required>
+                <input type="tel" id="form-phone" placeholder="Phone Number" required>
+                <textarea id="form-details" placeholder="Describe Your Electrical Issue (e.g., flickering lights, panel upgrade)" required></textarea>
+                <button type="submit" class="cta-primary">Book My Service</button>
+                <p id="form-message" class="hidden"></p>
+            </form>
         </div>
     </section>
 
-    <section id="platform" class="platform-section">
-        <h2>Our Core Platform</h2>
-        <div class="card-container">
-            <div class="platform-card">
-                <h3>Education First</h3>
-                <p>Investing in local schools and teachers for a brighter tomorrow.</p>
+    <section id="services" class="services-section">
+        <h2>Our Core Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Panel Upgrades</h3>
+                <p>Modernize your home's power supply for safety and efficiency.</p>
             </div>
-            <div class="platform-card">
-                <h3>Job Creation</h3>
-                <p>Supporting local businesses and attracting new industries to our region.</p>
+            <div class="service-card">
+                <h3>Lighting Installation</h3>
+                <p>Indoor/Outdoor lighting design and installation (LED, security, landscape).</p>
             </div>
-            <div class="platform-card">
-                <h3>Affordable Healthcare</h3>
-                <p>Ensuring every family has access to quality and affordable medical care.</p>
+            <div class="service-card">
+                <h3>Troubleshooting & Repair</h3>
+                <p>Fast diagnosis and repair of outlets, wiring, and appliance circuits.</p>
+            </div>
+            <div class="service-card">
+                <h3>EV Charger Install</h3>
+                <p>Safe and efficient installation of dedicated circuits for electric vehicle charging.</p>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="signup-section">
-        <h2>Get Involved Today</h2>
-        <p>Stay updated on rallies, news, and volunteer opportunities.</p>
-        <form id="signup-form" class="signup-form">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email Address" required>
-            <button type="submit" class="cta-primary">Sign Up to Volunteer</button>
-            <p id="form-message" class="hidden"></p>
-        </form>
+    <section class="usp-section">
+        <h2>The [Company Name] Difference</h2>
+        <ul>
+            <li>**Certified & Local:** We live and work right here in the community.</li>
+            <li>**Guaranteed Work:** 100% satisfaction or we make it right.</li>
+            <li>**Flat-Rate Pricing:** Know the cost before we start, no hidden fees.</li>
+        </ul>
     </section>
 
     <footer class="main-footer">
-        <p>&copy; 2025 [Candidate Name] Campaign. All Rights Reserved.</p>
-        <div class="social-links">
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-        </div>
+        <p>&copy; 2025 [Company Name] Electrical Services. Licensed #12345. Insured & Bonded.</p>
+        <p>Service Area: Your City, Your Town, and surrounding areas.</p>
     </footer>
 
     <script src="script.js"></script>
